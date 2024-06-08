@@ -1,0 +1,6 @@
+server: true
+bootstrap-expect: 1
+data-dir: dkron.data
+log-level: info
+tags:
+ python: daily

@@ -1,0 +1,10 @@
+server: true
+bootstrap-expect: 3
+data-dir: dkron.data
+log-level: info
+tags:
+ python: daily
+retry-join:
+ - dkron1:8946
+ - dkron2:8946
+ - dkron3:8946

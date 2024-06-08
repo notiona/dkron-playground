@@ -1,0 +1,10 @@
+FROM dkron/dkron:4.0.0-beta5-light
+
+RUN mkdir -p /etc/dkron
+COPY dkron_server.yml /etc/dkron/dkron.yml
+
+EXPOSE 8080
+EXPOSE 8946
+EXPOSE 6868
+
+ENTRYPOINT ["dkron", "agent"]

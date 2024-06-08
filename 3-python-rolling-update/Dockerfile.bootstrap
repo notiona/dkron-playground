@@ -1,0 +1,12 @@
+FROM python:3.11.9-alpine3.20
+
+COPY --from=dkron/dkron:4.0.0-beta5-light /usr/local/bin /usr/local/bin
+
+RUN mkdir -p /etc/dkron
+COPY dkron_bootstrap.yml /etc/dkron/dkron.yml
+
+EXPOSE 8080
+EXPOSE 8946
+EXPOSE 6868
+
+ENTRYPOINT ["dkron", "agent"]
